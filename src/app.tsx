@@ -1,5 +1,7 @@
 import { Suspense, useEffect, useState } from 'react'
 import { Spinner } from '@chakra-ui/spinner'
+import type { ThemeContextProps } from '@contexts/theme-context.ts'
+import { ThemeContext } from '@contexts/theme-context.ts'
 import { setup, tw } from 'twind'
 
 import { MainContent } from '@components/sections/main-content.tsx'
@@ -10,8 +12,6 @@ import { useBodyThemeSync } from '@hooks/use-mutation-theme-class.ts'
 
 import './app.css'
 import './global.css'
-import type { ThemeContextProps } from '@contexts/theme-context.ts'
-import { ThemeContext } from '@contexts/theme-context.ts'
 
 setup({
   preflight: false,

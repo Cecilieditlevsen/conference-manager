@@ -1,4 +1,5 @@
-import { Item, ListBox } from 'react-aria-components'
+import { ListBox, ListBoxItem } from 'react-aria-components'
+import { useThemeContext } from '@contexts/theme-context'
 import { isToday, parseDate } from '@internationalized/date'
 import { clsx } from 'clsx'
 import { tw } from 'twind'
@@ -8,7 +9,6 @@ import { AriaSelect } from '@components/filters/top-nav/select.tsx'
 
 import { useAreas } from '@hooks/use-areas.ts'
 import { useTypes } from '@hooks/use-types.ts'
-import { useThemeContext } from '@contexts/theme-context'
 
 type Props = {
   date: string | null
@@ -37,7 +37,7 @@ export const TopNav = (props: Props) => {
         >
           <ListBox items={types.data}>
             {(item) => (
-              <Item
+              <ListBoxItem
                 className={({ isSelected }) =>
                   tw`${clsx(
                     'px-[20px] min-w-[290px] text-start  font-secondary text-base rounded py-3 select-none overflow-hidden',
@@ -53,7 +53,7 @@ export const TopNav = (props: Props) => {
                 id={item.name}
               >
                 {item.name}
-              </Item>
+              </ListBoxItem>
             )}
           </ListBox>
         </AriaSelect>
@@ -77,7 +77,7 @@ export const TopNav = (props: Props) => {
         >
           <ListBox items={areas.data}>
             {(item) => (
-              <Item
+              <ListBoxItem
                 className={({ isSelected }) =>
                   tw`${clsx(
                     'px-[20px] min-w-[290px] text-start font-secondary text-base rounded py-3 select-none overflow-hidden',
@@ -93,7 +93,7 @@ export const TopNav = (props: Props) => {
                 id={item.name}
               >
                 {item.name}
-              </Item>
+              </ListBoxItem>
             )}
           </ListBox>
         </AriaSelect>

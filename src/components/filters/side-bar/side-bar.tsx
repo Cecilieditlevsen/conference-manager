@@ -1,4 +1,5 @@
-import { Item, ListBox } from 'react-aria-components'
+import { ListBox, ListBoxItem } from 'react-aria-components'
+import { useThemeContext } from '@contexts/theme-context'
 import { today } from '@internationalized/date'
 import { tw } from 'twind'
 
@@ -7,7 +8,6 @@ import { CalendarView } from '@components/filters/side-bar/calendar.tsx'
 import { useAreas } from '@hooks/use-areas.ts'
 import { useTypes } from '@hooks/use-types.ts'
 import { IconChevronRight } from '@utils/icons/icon-chevron-right.tsx'
-import { useThemeContext } from '@contexts/theme-context'
 
 type Props = {
   date: string | null
@@ -38,7 +38,7 @@ export const SideBar = (props: Props) => {
         }
         onSelectionChange={() => clear()}
       >
-        <Item
+        <ListBoxItem
           textValue={'alle Resultater'}
           className={({ isSelected }) =>
             tw`${
@@ -53,7 +53,7 @@ export const SideBar = (props: Props) => {
             className={tw`w-5 h-5 mr-[10px] group-hover:translate-x-[6px] transition  duration-200`}
           />
           Alle Resultater
-        </Item>
+        </ListBoxItem>
       </ListBox>
 
       <div>
@@ -78,7 +78,7 @@ export const SideBar = (props: Props) => {
           }}
         >
           {(item) => (
-            <Item
+            <ListBoxItem
               textValue={item.name}
               className={({ isSelected }) =>
                 tw`${
@@ -93,7 +93,7 @@ export const SideBar = (props: Props) => {
                 className={tw`w-5 h-5 mr-[10px] group-hover:translate-x-[6px] transition  duration-200`}
               />
               {item.name}
-            </Item>
+            </ListBoxItem>
           )}
         </ListBox>
       </div>
@@ -120,7 +120,7 @@ export const SideBar = (props: Props) => {
           }}
         >
           {(item) => (
-            <Item
+            <ListBoxItem
               textValue={item.name}
               className={({ isSelected }) =>
                 tw`${
@@ -135,7 +135,7 @@ export const SideBar = (props: Props) => {
                 className={tw`w-5 h-5 mr-[10px] group-hover:translate-x-[6px] transition  duration-200`}
               />
               {item.name}
-            </Item>
+            </ListBoxItem>
           )}
         </ListBox>
       </div>
