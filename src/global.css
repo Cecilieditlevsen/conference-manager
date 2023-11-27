@@ -1,0 +1,226 @@
+:root {
+  --darkmode-900: #212121;
+  --darkmode-800: #424242;
+  --darkmode-700: #616161;
+  --darkmode-600: #707070;
+  --darkmode-500: #9e9e9e;
+  --darkmode-400: #bdbdbd;
+  --darkmode-300: #e0e0e0;
+  --darkmode-200: #eee;
+  --darkmode-100: #f5f5f5;
+  --darkmode-50: #fafafa;
+  --darkmode-hightlight-1-200: #aeead9;
+  --darkmode-hightlight-1-100: #b5eada;
+  --darkmode-hightlight-1-50: #e1f8f2;
+  --darkmode-hightlight-2-200: #fed6a9;
+  --darkmode-hightlight-2-100: #ffdbb7;
+  --darkmode-hightlight-2-50: #fff2e2;
+  --darkmode-overlay: rgba(33, 33, 33, 0.6);
+  --darkmode-overlay-45deg: linear-gradient(
+    45deg,
+    rgba(33, 33, 33, 0.7) 0%,
+    rgba(33, 33, 33, 0) 100%
+  );
+  --darkmode-overlay-0deg: linear-gradient(
+    0deg,
+    rgba(33, 33, 33, 0.7) 0%,
+    rgba(33, 33, 33, 0) 95%
+  );
+  --darkmode-card-border: 1px solid var(--darkmode-600);
+
+  --footer-brand-height-lg: 45px;
+  --footer-brand-height-md: 45px;
+  --footer-pt-lg: 100px;
+  --footer-pt-md: 50px;
+  --footer-pb-lg: 100px;
+  --footer-pb-md: 50px;
+
+  --header-brand-height-lg: 50px;
+  --header-brand-height-md: 20px;
+  --sleeve-button-border-radius: 50px;
+
+  --color-primary: #461422;
+  --color-primary-text: #fff;
+  --color-secondary: #0a5564;
+  --color-secondary-text: #fff;
+  --color-header: #fff;
+  --color-header-text: #111;
+  --color-icons: #141e4d;
+  --color-arrows: #141e4d;
+  --color-btn-primary: #e1e6e6;
+  --color-btn-primary-text: #141e4d;
+  --color-primary-decorative: #d0c6f0;
+  --color-primary-decorative-text: #141e4d;
+  --color-secondary-decorative: #461422;
+  --color-secondary-decorative-text: #fff;
+  --color-footer: #0a5564;
+  --color-footer-text: #fff;
+  --color-link: #3755cd;
+  --color-tag: #141e4d;
+  --color-overlay-cover: #00000099;
+  --color-overlay-start: #000000e5;
+  --color-overlay-end: #00000000;
+  --color-overlay-text: #fff;
+  --color-overlay-button: #d0c6f0;
+  --color-overlay-button-text: #111;
+  --color-article-element--0: #0a5564;
+  --color-article-element-title--0: #fff;
+  --color-article-element--1: #461422;
+  --color-article-element-title--1: #fff;
+  --color-article-element--2: #d0c6f0;
+  --color-article-element-title--2: #111;
+  --color-article-element--3: #e1e6e6;
+  --color-article-element-title--3: #111;
+  --color-article-element--4: #d0c6f0;
+  --color-article-element-title--4: #111;
+  --color-article-element--5: #e1e6e6;
+  --color-article-element-title--5: #111;
+  --color-btn-bg--primary: #d0c6f0;
+  --color-btn-bg--primary-text: #000;
+  --color-btn-bg--primary-border-color: #d0c6f0;
+  --color-btn-bg--secondary: #fff;
+  --color-btn-bg--secondary-text: #461422;
+  --color-btn-bg--secondary-border-color: #fff;
+  --color-btn-bg--grey-light: #d0c6f0;
+  --color-btn-bg--grey-light-text: #111;
+  --color-btn-bg--header-border-color: #d0c6f0;
+  --color-bg-white-component-border: #848b8b;
+  --color-border-top--article-components-bg: #141e4d;
+  --color-border-top--article-components-text: #fff;
+
+  --sleeve-card-border: none;
+  --sleeve-btn-height: 50px;
+  --sleeve-btn-min-width: 150px;
+  --sleeve-btn-padding-y: 15px;
+  --sleeve-btn-padding-x: 15px;
+  --sleeve-component-spacing: 30px;
+  --sleeve-component-padding: 30px;
+  --sleeve-component-padding-top: 30px;
+  --sleeve-component-padding-right: 30px;
+  --sleeve-component-padding-bottom: 30px;
+  --sleeve-component-padding-left: 30px;
+  --sleeve-component-border-radius: 0;
+  --sleeve-component-image-radius: 0;
+  --sleeve-image-radius: 0;
+  --sleeve-search-bar-small-border-radius: 0;
+  --sleeve-search-bar-small-padding: 0 20px;
+  --sleeve-search-bar-label-left: 20px;
+  --sleeve-checkbox-border-radius: 0;
+  --sleeve-tag-border-radius: 0;
+  --sleeve-page-title-margin-bottom: 60px;
+  --sleeve-page-title-margin-bottom-sm: 30px;
+  --sleeve-filter-menu-margin-bottom: 60px;
+  --sleeve-color-highlight: var(--color-primary);
+  --sleeve-color-highlight-text: var(--color-primary-text);
+  --sleeve-color-highlight-tag: var(--color-primary-text);
+  --sleeve-color-highlight-arrow: var(--color-primary-text);
+  --sleeve-color-highlight-btn: var(--color-primary-text);
+  --sleeve-color-highlight-btn-text: var(--color-primary);
+  --section-margin-bottom-md--large: 100px;
+  --section-margin-bottom-sm--large: 50px;
+  --section-margin-bottom-md--medium: 60px;
+  --section-margin-bottom-sm--medium: 30px;
+  --section-margin-bottom-md--small: 40px;
+  --section-margin-bottom-sm--small: 50px;
+  --section-margin-bottom--xsmall: 30px;
+  --bg-section-padding-md-top: 100px;
+  --bg-section-padding-sm-top: 50px;
+  --bg-section-padding-md-bottom: 100px;
+  --bg-section-padding-sm-bottom: 50px;
+
+  --font-primary: 'ID00 Serif', serif;
+  --font-secondary: 'ID00 Sans', sans-serif;
+  --base-font-size: 16px;
+  --font-primary-line-height: 1.3;
+  --font-secondary-line-height: 1.55;
+  --article-body-line-height: 1.55;
+  --h1-font-size-lg: 40px;
+  --h1-font-size-sm: 26px;
+  --h2-font-size-lg: 26px;
+  --h2-font-size-sm: 26px;
+  --h3-font-size-lg: 22px;
+  --h3-font-size-sm: 22px;
+  --h4-font-size-lg: 20px;
+  --h4-font-size-sm: 20px;
+  --heading-font-weight: 600;
+  --body-font-weight: 400;
+  --tag-font-weight: 600;
+  --heading-menu-font-weight: 600;
+  --component-heading-font-size: var(--h3-font-size-lg) px;
+  --component-body-font-size: 16px;
+  --article-subheading-font-size-lg: 24px;
+  --article-subheading-font-size-sm: 20px;
+  --article-body-font-size-lg: 18px;
+  --article-body-font-size-sm: 18px;
+  --h5-font-size-lg: var(--article-body-font-size-lg) px;
+  --h5-font-size-sm: var(--article-body-font-size-sm) px;
+  --small-font-size: 14px;
+  --small-details-font-size: 14px;
+  --small-text-transform: initial;
+  --btn-font-size: 16px;
+  --btn-link-font-size: 13px;
+  --form-font-size: 16px;
+  --breadcrumb-font-size: 14px;
+  --header-nav-link-font-size: 17px;
+  --megamenu-link-list-font-size: 14px;
+  --header-font-size-1: 17px;
+  --header-font-size-2: 14px;
+  --header-font-size-3: 15px;
+  --header-font-size-4: 14px;
+
+  --color-element: var(--color-icons);
+  --color-link-colored-bg: #fff;
+  --color-tag-bg: #e1e6e6;
+  --color-tag-bg-text: #111;
+  --color-btn-secondary: #0a5564;
+  --color-btn-secondary-text: #fff;
+  --color-black: #141e4d;
+  --color-white: #fff;
+  --color-grey-light: #f1f3f3;
+  --color-grey-medium: #848b8b;
+  --color-grey-dark: #575757;
+  --color-body: #f1f3f3;
+  --color-body-text: #141e4d;
+  --article-element-bg--default: var(--color-grey-light);
+  --main-white-bg-component-bg: var(--color-white);
+  --main-white-bg-component-border: 1px solid
+    var(--color-bg-white-component-border);
+  --section-white-bg: rgba(255, 255, 255, 0.5);
+  --section-white-bg-component-bg: var(--color-white);
+  --section-white-bg-component-border: none;
+  --color-overlay: var(--color-overlay-cover);
+  --color-overlay-45deg: linear-gradient(
+    45deg,
+    var(--color-overlay-start) 0%,
+    var(--color-overlay-end) 100%
+  );
+  --color-overlay-0deg: linear-gradient(
+    0deg,
+    var(--color-overlay-start) 0%,
+    var(--color-overlay-end) 95%
+  );
+
+  --col-padding: 12.5px !important;
+  --col-padding-md-down: 15px !important;
+  --container-width: 1350px;
+  --article-wrapper-max-width: auto;
+  --component-border-top-width: 4px;
+
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+
+  --orange: #fd7e14;
+}
+
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  display: none;
+}
+
+body {
+  position: relative;
+}
