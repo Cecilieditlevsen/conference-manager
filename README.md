@@ -1,27 +1,39 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Conference Manager
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+For this project, the focus is on creating an informative component for a commune that provides an overview of conferences within the area. The component will include filtering options to allow users to find the conferences that meet their interests easily. 
 
-## Expanding the ESLint configuration
+The objective was to create a functional React component that integrates smoothly into a vanilla JS project with an established design system.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Live Demo: https://conference-manager-one.vercel.app/
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Project Overview
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+The main focus of this project was to develop a comprehensive React component that seamlessly integrates into an existing vanilla JavaScript/HTML project. It was specifically designed to meet the requirements of a commune that wanted a conference listing page with filtering options.
+
+The primary objective was to create a highly functional React component that could be effortlessly embedded within the larger vanilla JavaScript/HTML project. This component serves as a self-contained module responsible for presenting a dynamic list of conferences in the commune's area, along with intuitive filtering capabilities.
+
+To ensure a cohesive user experience and consistency with the existing design system of the vanilla project, the React component's styles were meticulously crafted using Twind, a css-in-js tool. By leveraging shared variable names and excluding a preflight (CSS normalize), the component's styles seamlessly blend with the overall aesthetics of the vanilla JavaScript project.
+
+Furthermore, the React component was implemented using React Aria Components, prioritizing web accessibility and adherence to accessibility best practices. This guarantees an inclusive and user-friendly experience.
+
+
+
+
+
+## Technologies used
+
+The project utilizes the following technologies:
+
+`Vite` Vite is a fast and lightweight build tool that optimizes the development experience for modern web applications. It enables quick bundling and reloading of modules, resulting in shorter build times and faster development cycles.
+
+`React Query`  To handle data-fetching and state management. 
+
+`Twind` To facilitate a utility-first and component-based approach. A CSS-IN-JS tool to make the react component integrate more seamlessly 
+
+`TypeScript` To enhance code maintainability and reliability
+
+
