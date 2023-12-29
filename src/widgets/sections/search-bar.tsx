@@ -1,23 +1,27 @@
 import { useRef } from 'react'
 import { useTextField } from 'react-aria'
+import { useCMParamsContext } from '@app/contexts/cm-params/cm-params.context.tsx'
+import { useThemeContext } from '@app/contexts/theme-context.ts'
 import { IconSearch } from '@shared/icons/icon-search.tsx'
 import { container } from '@shared/styles/container.style.ts'
+import { useDebounceFn } from 'ahooks'
 import { tw } from 'twind'
 
-import { useCMParamsContext } from '../../app/contexts/cm-params/cm-params.context.tsx'
-import { useThemeContext } from '../../app/contexts/theme-context'
-
 export const SearchBar = () => {
-  const theme = useThemeContext()
   const inputRef = useRef<HTMLInputElement | null>(null)
+  const theme = useThemeContext()
   const { setSearch } = useCMParamsContext()
+
+  const { run } = useDebounceFn((value: string) => setSearch(value), {
+    wait: 300,
+  })
 
   const { inputProps, labelProps } = useTextField(
     {
       label: 'søg',
       placeholder: 'søg her',
       inputElementType: 'input',
-      onChange: (e) => setSearch(e),
+      onChange: run,
     },
     inputRef,
   )
