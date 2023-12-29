@@ -10,6 +10,20 @@ The objective was to create a functional React component that integrates smoothl
 Live Demo: https://conference-manager-one.vercel.app/
 
 
+## Technologies used
+
+The project utilizes the following technologies:
+
+`Vite` Vite is a fast and lightweight build tool that optimizes the development experience for modern web applications. It enables quick bundling and reloading of modules, resulting in shorter build times and faster development cycles.
+
+`React Query`  To handle data-fetching and state management. 
+
+`Twind` To facilitate a utility-first and component-based approach. A CSS-IN-JS tool to make the react component integrate more seamlessly 
+
+`TypeScript` To enhance code maintainability and reliability
+
+
+
 ## Project Overview
 
 The main focus of this project was to develop a comprehensive React component that seamlessly integrates into an existing vanilla JavaScript/HTML project. It was specifically designed to meet the requirements of a commune that wanted a conference listing page with filtering options.
@@ -24,16 +38,5 @@ Furthermore, the React component was implemented using React Aria Components, pr
 
 
 
-## Technologies used
-
-The project utilizes the following technologies:
-
-`Vite` Vite is a fast and lightweight build tool that optimizes the development experience for modern web applications. It enables quick bundling and reloading of modules, resulting in shorter build times and faster development cycles.
-
-`React Query`  To handle data-fetching and state management. 
-
-`Twind` To facilitate a utility-first and component-based approach. A CSS-IN-JS tool to make the react component integrate more seamlessly 
-
-`TypeScript` To enhance code maintainability and reliability
 
 
