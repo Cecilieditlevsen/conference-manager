@@ -5,6 +5,7 @@ import { useThemeContext } from '@app/contexts/theme-context.ts'
 import { Spinner } from '@chakra-ui/spinner'
 import { useInfiniteEvents } from '@entities/events/hooks/use-infinite-events.ts'
 import { EventListItem } from '@widgets/events/event-list-item.tsx'
+import { clsx } from 'clsx'
 import { tw } from 'twind'
 
 export const Events = () => {
@@ -36,9 +37,12 @@ export const Events = () => {
           <div className={tw`mb-section-medium md:mb-section-medium-md`}>
             {data.pages.length === 0 && (
               <p
-                className={tw`text-center ${
-                  theme === 'dark-theme' ? 'text-white' : 'text-black'
-                }`}
+                className={tw(
+                  clsx('text-center', {
+                    'text-white': theme === 'dark-theme',
+                    'text-black': theme !== 'dark-theme',
+                  }),
+                )}
               >
                 Der er ingen arrangementer der matcher din søgning
               </p>
@@ -48,9 +52,12 @@ export const Events = () => {
               <Fragment key={i}>
                 {group.events.length === 0 ? (
                   <p
-                    className={tw`text-center ${
-                      theme === 'dark-theme' ? 'text-white' : 'text-black'
-                    }`}
+                    className={tw(
+                      clsx('text-center', {
+                        'text-white': theme === 'dark-theme',
+                        'text-black': theme !== 'dark-theme',
+                      }),
+                    )}
                   >
                     Der er ingen arrangementer der matcher din søgning
                   </p>
@@ -59,17 +66,21 @@ export const Events = () => {
                     {group.events.map((event) => (
                       <li
                         key={event.eventID.toString()}
-                        className={tw`border-t border-t-solid ${
-                          theme === 'dark-theme'
-                            ? 'border-dark-800'
-                            : 'border-grey-medium'
-                        }`}
+                        className={tw(
+                          clsx('border-t border-t-solid', {
+                            'border-dark-800': theme === 'dark-theme',
+                            'border-grey-medium': theme !== 'dark-theme',
+                          }),
+                        )}
                       >
                         <a
                           href={event.eventWebsiteURL}
-                          className={tw`no-underline ${
-                            theme === 'dark-theme' ? 'text-white' : 'text-black'
-                          }`}
+                          className={tw(
+                            clsx('no-underline', {
+                              'text-white': theme === 'dark-theme',
+                              'text-black': theme !== 'dark-theme',
+                            }),
+                          )}
                         >
                           <EventListItem
                             title={event.eventName}

@@ -35,7 +35,7 @@ export const SideBar = () => {
               isSelected
                 ? `${theme === 'dark-theme' ? 'text-white' : 'text-link'}`
                 : `${theme === 'dark-theme' ? 'text-white' : 'text-black'}`
-            } font-secondary flex  group  items-center text-base font-medium cursor-pointer hover:underline focus:(outline-none ring ring-offset-4 rounded ring-2 ring-primary)`
+            } font-secondary flex group items-center text-base font-medium cursor-pointer hover:underline focus:(outline-none ring ring-offset-4 rounded ring-2 ring-primary)`
           }
           id={'alleResultater'}
         >
