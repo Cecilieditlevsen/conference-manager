@@ -18,37 +18,30 @@ type SearchFieldOwnProps = {
 
 export type SearchFieldProps = SearchFieldOwnProps & RASearchFieldProps
 
-export function SearchField({
-  label,
-  description,
-  errorMessage,
-  isInvalid,
-  isDisabled,
-  ...rest
-}: SearchFieldProps) {
+export function SearchField(props: SearchFieldProps) {
   const ErrorOrDescription = () => {
-    if (isDisabled) return null
+    if (props.isDisabled) return null
 
     return (
       <div className={tw`text-sm`}>
-        {isInvalid && errorMessage ? (
+        {props.isInvalid && props.errorMessage ? (
           <RAText slot={'errorMessage'} className={tw`text-red-500`}>
-            {errorMessage}
+            {props.errorMessage}
           </RAText>
-        ) : description ? (
-          <RAText slot={'description'}>{description}</RAText>
+        ) : props.description ? (
+          <RAText slot={'description'}>{props.description}</RAText>
         ) : null}
       </div>
     )
   }
 
   return (
-    <RASearchField {...rest}>
-      <RALabel className={tw`sr-only`}>{label}</RALabel>
+    <RASearchField {...props}>
+      <RALabel className={tw`sr-only`}>{props.label}</RALabel>
 
       <div className={tw`relative mt-2 mb-2`}>
         <RAInput
-          placeholder={label}
+          placeholder={props.label}
           className={tw`h-[50px] sm:h-[60px] w-full px-9 sm:px-12 placeholder::(text-form text-grey-dark) text-form rounded-search-bar border(solid grey-medium 1) focus:(outline-none ring ring-offset-1 ring-primary ring-2)`}
         />
 
