@@ -1,12 +1,10 @@
-import { ListBox, ListBoxItem } from 'react-aria-components'
 import { useCMParamsContext } from '@app/contexts/cm-params/cm-params.context.tsx'
 import { useThemeContext } from '@app/contexts/theme/theme-context.ts'
 import { useAreas } from '@entities/categories/hooks/use-areas.ts'
 import { useTypes } from '@entities/categories/hooks/use-types.ts'
 import { today } from '@internationalized/date'
-import { IconChevronRight } from '@shared/icons/icon-chevron-right.tsx'
+import { ListMenu } from '@shared/ui/list-menu/list-menu.tsx'
 import { CalendarView } from '@widgets/filters/side-bar/calendar.tsx'
-import { clsx } from 'clsx'
 import { tw } from 'twind'
 
 export const SideBar = () => {
@@ -18,49 +16,28 @@ export const SideBar = () => {
 
   return (
     <div className={tw`hidden md:flex md:flex-col gap-[30px]`}>
-      <ListBox
-        aria-label={'Alle resultater'}
-        selectionMode={'single'}
-        className={tw`list-none p-0 m-0 mt-[20px] space-y-[12px]`}
-        selectedKeys={
-          !type && !area && date === today('Europe/Copenhagen').toString()
-            ? ['alleResultater']
-            : []
-        }
-        onSelectionChange={() => clear()}
-      >
-        <ListBoxItem
-          textValue={'alle Resultater'}
-          className={({ isSelected }) =>
-            tw`${
-              isSelected
-                ? `${theme === 'dark-theme' ? 'text-white' : 'text-link'}`
-                : `${theme === 'dark-theme' ? 'text-white' : 'text-black'}`
-            } font-secondary flex group items-center text-base font-medium cursor-pointer hover:underline focus:(outline-none ring ring-offset-4 rounded ring-2 ring-primary)`
+      <ListMenu>
+        <ListMenu.ListBox
+          aria-label={'Alle resultater'}
+          selectionMode={'single'}
+          selectedKeys={
+            !type && !area && date === today('Europe/Copenhagen').toString()
+              ? ['alleResultater']
+              : []
           }
-          id={'alleResultater'}
+          onSelectionChange={() => clear()}
         >
-          <IconChevronRight
-            className={tw`w-5 h-5 mr-[10px] group-hover:translate-x-[6px] transition  duration-200`}
-          />
-          Alle Resultater
-        </ListBoxItem>
-      </ListBox>
+          <ListMenu.Item id={'alleResultater'}>Alle resultater</ListMenu.Item>
+        </ListMenu.ListBox>
+      </ListMenu>
 
-      <div>
-        <h3
-          className={tw`text-heading-4-lg font-primary font-heading-weight ${
-            theme === 'dark-theme' ? 'text-white' : 'text-black'
-          }`}
-        >
-          Typer
-        </h3>
+      <ListMenu>
+        <ListMenu.Title>Typer</ListMenu.Title>
 
-        <ListBox
+        <ListMenu.ListBox
           aria-label={'filtrer begivenheder efter type'}
           items={types.data}
           selectionMode={'single'}
-          className={tw`list-none p-0 m-0 mt-[20px] space-y-[12px]`}
           selectedKeys={type ? [type] : []}
           onSelectionChange={(e) => {
             return [...e].length === 0
@@ -69,49 +46,20 @@ export const SideBar = () => {
           }}
         >
           {(item) => (
-            <ListBoxItem
-              textValue={item.name}
-              className={({ isSelected }) =>
-                tw(
-                  clsx(
-                    `${
-                      isSelected
-                        ? theme === 'dark-theme'
-                          ? 'text-white'
-                          : 'text-link'
-                        : theme === 'dark-theme'
-                        ? 'text-white'
-                        : 'text-black'
-                    }`,
-                    'font-secondary flex group items-center text-base font-medium cursor-pointer hover:underline focus:(outline-none ring ring-offset-4 rounded ring-2 ring-primary)',
-                  ),
-                )
-              }
-              id={item.name}
-            >
-              <IconChevronRight
-                className={tw`w-5 h-5 mr-[10px] group-hover:translate-x-[6px] transition  duration-200`}
-              />
+            <ListMenu.Item textValue={item.name} id={item.name}>
               {item.name}
-            </ListBoxItem>
+            </ListMenu.Item>
           )}
-        </ListBox>
-      </div>
+        </ListMenu.ListBox>
+      </ListMenu>
 
-      <div>
-        <h3
-          className={tw`text-heading-4-lg font-primary font-heading-weight ${
-            theme === 'dark-theme' ? 'text-white' : 'text-black'
-          }`}
-        >
-          Fagområder
-        </h3>
+      <ListMenu>
+        <ListMenu.Title>Fagområder</ListMenu.Title>
 
-        <ListBox
+        <ListMenu.ListBox
           aria-label={'filtrer begivenheder efter type'}
           items={areas.data}
           selectionMode={'single'}
-          className={tw`list-none p-0 m-0 mt-[20px] space-y-[12px]`}
           selectedKeys={area ? [area] : []}
           onSelectionChange={(e) => {
             return [...e].length === 0
@@ -120,25 +68,12 @@ export const SideBar = () => {
           }}
         >
           {(item) => (
-            <ListBoxItem
-              textValue={item.name}
-              className={({ isSelected }) =>
-                tw`${
-                  isSelected
-                    ? `${theme === 'dark-theme' ? 'text-white' : 'text-link'}`
-                    : `${theme === 'dark-theme' ? 'text-white' : 'text-black'}`
-                } font-secondary flex  group  items-center text-base font-medium cursor-pointer hover:underline focus:(outline-none ring ring-offset-4 rounded ring-2 ring-primary)`
-              }
-              id={item.name}
-            >
-              <IconChevronRight
-                className={tw`w-5 h-5 mr-[10px] group-hover:translate-x-[6px] transition  duration-200`}
-              />
+            <ListMenu.Item textValue={item.name} id={item.name}>
               {item.name}
-            </ListBoxItem>
+            </ListMenu.Item>
           )}
-        </ListBox>
-      </div>
+        </ListMenu.ListBox>
+      </ListMenu>
 
       <div>
         <h2

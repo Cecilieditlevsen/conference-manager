@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   ThemeContext,
   type ThemeContextProps,
@@ -11,11 +11,6 @@ function getTheme() {
     return 'dark-theme'
   } else if (body.classList.contains('light-theme')) {
     return 'light-theme'
-  } else if (
-    window.matchMedia &&
-    window.matchMedia('(prefers-color-scheme: dark)').matches
-  ) {
-    return 'dark-theme'
   } else {
     return 'light-theme'
   }

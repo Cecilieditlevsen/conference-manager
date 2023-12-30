@@ -20,11 +20,18 @@ export const CMComponent = () => {
         }),
       )}
     >
-      <SearchBar />
-
-      <div className={tw`${container}`}>
-        <Button onPress={() => changeTheme()}>Change theme</Button>
+      <div className={tw` absolute right-10 mt-6`}>
+        <Button
+          className={tw`${
+            theme === 'light-theme' ? 'text-black' : 'text-white'
+          }`}
+          onPress={() => changeTheme()}
+        >
+          toggle Theme
+        </Button>
       </div>
+
+      <SearchBar />
 
       <Suspense
         fallback={
