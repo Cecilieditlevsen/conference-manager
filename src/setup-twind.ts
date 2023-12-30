@@ -2,7 +2,7 @@ import { setup } from 'twind'
 
 export function setupTwind() {
   return setup({
-    preflight: false,
+    preflight: true,
     hash: true,
     theme: {
       extend: {
