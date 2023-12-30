@@ -1,6 +1,9 @@
 import { Suspense } from 'react'
+import { Button } from 'react-aria-components'
 import { useThemeContext } from '@app/contexts/theme/theme-context.ts'
 import { Spinner } from '@chakra-ui/spinner'
+import { changeTheme } from '@features/change-theme.ts'
+import { container } from '@shared/styles/container.style.ts'
 import { MainContent } from '@widgets/sections/main-content.tsx'
 import { SearchBar } from '@widgets/sections/search-bar.tsx'
 import { clsx } from 'clsx'
@@ -18,6 +21,11 @@ export const CMComponent = () => {
       )}
     >
       <SearchBar />
+
+      <div className={tw`${container}`}>
+        <Button onPress={() => changeTheme()}>Change theme</Button>
+      </div>
+
       <Suspense
         fallback={
           <div

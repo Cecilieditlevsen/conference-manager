@@ -6,6 +6,7 @@ import { useTypes } from '@entities/categories/hooks/use-types.ts'
 import { today } from '@internationalized/date'
 import { IconChevronRight } from '@shared/icons/icon-chevron-right.tsx'
 import { CalendarView } from '@widgets/filters/side-bar/calendar.tsx'
+import { clsx } from 'clsx'
 import { tw } from 'twind'
 
 export const SideBar = () => {
@@ -71,11 +72,20 @@ export const SideBar = () => {
             <ListBoxItem
               textValue={item.name}
               className={({ isSelected }) =>
-                tw`${
-                  isSelected
-                    ? `${theme === 'dark-theme' ? 'text-white' : 'text-link'}`
-                    : `${theme === 'dark-theme' ? 'text-white' : 'text-black'}`
-                } font-secondary flex  group  items-center text-base font-medium cursor-pointer hover:underline focus:(outline-none ring ring-offset-4 rounded ring-2 ring-primary)`
+                tw(
+                  clsx(
+                    `${
+                      isSelected
+                        ? theme === 'dark-theme'
+                          ? 'text-white'
+                          : 'text-link'
+                        : theme === 'dark-theme'
+                        ? 'text-white'
+                        : 'text-black'
+                    }`,
+                    'font-secondary flex group items-center text-base font-medium cursor-pointer hover:underline focus:(outline-none ring ring-offset-4 rounded ring-2 ring-primary)',
+                  ),
+                )
               }
               id={item.name}
             >
