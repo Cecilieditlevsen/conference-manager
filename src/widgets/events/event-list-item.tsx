@@ -1,7 +1,5 @@
 import { useThemeContext } from '@app/contexts/theme/theme-context.ts'
 import dayjs from 'dayjs'
-import updateLocale from 'dayjs/plugin/updateLocale'
-import utc from 'dayjs/plugin/utc'
 import { tw } from 'twind'
 
 import 'dayjs/locale/da'
@@ -20,25 +18,6 @@ type EventListItemProps = {
   type?: string | null
 }
 
-dayjs.locale('da')
-dayjs.extend(updateLocale)
-dayjs.extend(utc)
-dayjs.updateLocale('da', {
-  monthsShort: [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'Maj',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Okt',
-    'Nov',
-    'Dec',
-  ],
-})
 
 export const EventListItem = ({
   title,

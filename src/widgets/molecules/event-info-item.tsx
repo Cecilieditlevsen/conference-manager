@@ -1,11 +1,10 @@
 import { useThemeContext } from '@app/contexts/theme/theme-context.ts'
+import { IconAlert } from '@shared/icons/icon-alert.tsx'
+import { IconCalendar } from '@shared/icons/icon-calendar.tsx'
+import { IconCalendarDue } from '@shared/icons/icon-calendar-due.tsx'
+import { IconTime } from '@shared/icons/icon-time.tsx'
 import { clsx } from 'clsx'
 import { tw } from 'twind'
-
-import { IconAlert } from '../../shared/icons/icon-alert.tsx'
-import { IconCalendar } from '../../shared/icons/icon-calendar.tsx'
-import { IconCalendarDue } from '../../shared/icons/icon-calendar-due.tsx'
-import { IconTime } from '../../shared/icons/icon-time.tsx'
 
 type EventListItemProps = {
   title: string
