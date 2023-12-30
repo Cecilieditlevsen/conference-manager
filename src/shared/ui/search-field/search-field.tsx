@@ -11,8 +11,7 @@ import { IconX } from '@shared/icons/icon-x.tsx'
 import { tw } from 'twind'
 
 type SearchFieldOwnProps = {
-  label?: string
-  placeholder?: string
+  label: string
   description?: string
   errorMessage?: string
 }
@@ -21,7 +20,6 @@ export type SearchFieldProps = SearchFieldOwnProps & RASearchFieldProps
 
 export function SearchField({
   label,
-  placeholder,
   description,
   errorMessage,
   isInvalid,
@@ -46,11 +44,11 @@ export function SearchField({
 
   return (
     <RASearchField {...rest}>
-      {label ? <RALabel>{label}</RALabel> : null}
+      <RALabel className={tw`sr-only`}>{label}</RALabel>
 
       <div className={tw`relative mt-2 mb-2`}>
         <RAInput
-          placeholder={placeholder}
+          placeholder={label}
           className={tw`h-[50px] sm:h-[60px] w-full px-9 sm:px-12 placeholder::(text-form text-grey-dark) text-form rounded-search-bar border(solid grey-medium 1) focus:(outline-none ring ring-offset-1 ring-primary ring-2)`}
         />
 

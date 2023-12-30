@@ -12,9 +12,6 @@ const meta = {
     label: {
       description: 'The label of the field.',
     },
-    placeholder: {
-      description: 'The placeholder of the field.',
-    },
     isDisabled: {
       description: 'If true, the field will be disabled.',
       control: { type: 'boolean' },
@@ -39,7 +36,7 @@ const meta = {
     },
   },
   args: {
-    placeholder: 'Søg',
+    label: 'Søg',
   },
   render: (args) => <SearchField {...args} />,
 } satisfies Meta<typeof SearchField>
