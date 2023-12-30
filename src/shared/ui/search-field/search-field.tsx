@@ -24,26 +24,28 @@ export function SearchField({
   placeholder,
   description,
   errorMessage,
-  ...props
+  isInvalid,
+  isDisabled,
+  ...rest
 }: SearchFieldProps) {
   const ErrorOrDescription = () => {
-    if (props.isDisabled) return null
+    if (isDisabled) return null
 
     return (
       <div className={tw`text-sm`}>
-        {props.isDisabled ? null : props.isInvalid && errorMessage ? (
+        {isInvalid && errorMessage ? (
           <RAText slot={'errorMessage'} className={tw`text-red-500`}>
             {errorMessage}
           </RAText>
-        ) : (
+        ) : description ? (
           <RAText slot={'description'}>{description}</RAText>
-        )}
+        ) : null}
       </div>
     )
   }
 
   return (
-    <RASearchField {...props}>
+    <RASearchField {...rest}>
       {label ? <RALabel>{label}</RALabel> : null}
 
       <div className={tw`relative mt-2 mb-2`}>

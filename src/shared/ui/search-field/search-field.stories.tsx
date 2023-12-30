@@ -11,15 +11,9 @@ const meta = {
   argTypes: {
     label: {
       description: 'The label of the field.',
-      control: {
-        type: 'text',
-      },
     },
     placeholder: {
       description: 'The placeholder of the field.',
-      control: {
-        type: 'text',
-      },
     },
     isDisabled: {
       description: 'If true, the field will be disabled.',
@@ -47,6 +41,7 @@ const meta = {
   args: {
     placeholder: 'Søg',
   },
+  render: (args) => <SearchField {...args} />,
 } satisfies Meta<typeof SearchField>
 
 export default meta
