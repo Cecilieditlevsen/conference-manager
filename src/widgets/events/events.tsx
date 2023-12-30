@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { Button } from 'react-aria-components'
 import { useCMParamsContext } from '@app/contexts/cm-params/cm-params.context.tsx'
-import { useThemeContext } from '@app/contexts/theme-context.ts'
+import { useThemeContext } from '@app/contexts/theme/theme-context.ts'
 import { Spinner } from '@chakra-ui/spinner'
 import { useInfiniteEvents } from '@entities/events/hooks/use-infinite-events.ts'
 import { EventListItem } from '@widgets/events/event-list-item.tsx'

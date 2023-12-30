@@ -10,17 +10,16 @@ import {
   Dialog,
   Group,
   Heading,
-  Popover,
+  Popover
 } from 'react-aria-components'
+import { useThemeContext } from '@app/contexts/theme/theme-context.ts'
 import { isToday, parseDate, today } from '@internationalized/date'
 import { IconChevronDown } from '@shared/icons/icon-chevron-down.tsx'
 import { IconChevronLeft } from '@shared/icons/icon-chevron-left.tsx'
 import { IconChevronRight } from '@shared/icons/icon-chevron-right.tsx'
-import { fadeIn } from '@shared/styles/container.style.ts'
+import { fadeIn } from '@shared/styles/animatiosn.style.ts'
 import { clsx } from 'clsx'
 import { tw } from 'twind'
-
-import { useThemeContext } from '../../../app/contexts/theme-context'
 
 type Props = {
   date: string | null

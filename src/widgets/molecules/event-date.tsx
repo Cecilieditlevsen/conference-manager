@@ -1,7 +1,6 @@
+import { useThemeContext } from '@app/contexts/theme/theme-context.ts'
 import dayjs from 'dayjs'
 import { tw } from 'twind'
-
-import { useThemeContext } from '../../app/contexts/theme-context.ts'
 
 type EventDateProps = {
   startDate: string

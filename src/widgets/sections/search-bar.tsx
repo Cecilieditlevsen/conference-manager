@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { useTextField } from 'react-aria'
 import { useCMParamsContext } from '@app/contexts/cm-params/cm-params.context.tsx'
-import { useThemeContext } from '@app/contexts/theme-context.ts'
+import { useThemeContext } from '@app/contexts/theme/theme-context.ts'
 import { IconSearch } from '@shared/icons/icon-search.tsx'
 import { container } from '@shared/styles/container.style.ts'
 import { useDebounceFn } from 'ahooks'

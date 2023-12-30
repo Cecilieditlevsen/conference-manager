@@ -1,12 +1,11 @@
 import type { ReactNode } from 'react'
 import { useRef, useState } from 'react'
 import { Button, Popover, Select, SelectValue } from 'react-aria-components'
+import { useThemeContext } from '@app/contexts/theme/theme-context.ts'
 import { IconChevronDown } from '@shared/icons/icon-chevron-down.tsx'
-import { fadeIn } from '@shared/styles/container.style.ts'
+import { fadeIn } from '@shared/styles/animatiosn.style.ts'
 import { clsx } from 'clsx'
 import { tw } from 'twind'
-
-import { useThemeContext } from '../../../app/contexts/theme-context'
 
 type Props = {
   value: string | null

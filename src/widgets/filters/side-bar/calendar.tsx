@@ -1,11 +1,10 @@
 import { Button, Calendar, CalendarCell, CalendarGrid, Heading } from 'react-aria-components'
+import { useThemeContext } from '@app/contexts/theme/theme-context.ts'
 import { parseDate, today } from '@internationalized/date'
 import { IconChevronLeft } from '@shared/icons/icon-chevron-left.tsx'
 import { IconChevronRight } from '@shared/icons/icon-chevron-right.tsx'
 import { clsx } from 'clsx'
 import { tw } from 'twind'
-
-import { useThemeContext } from '../../../app/contexts/theme-context'
 
 type Props = {
   date: string | null

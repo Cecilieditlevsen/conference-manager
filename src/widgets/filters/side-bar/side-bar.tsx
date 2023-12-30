@@ -1,6 +1,6 @@
 import { ListBox, ListBoxItem } from 'react-aria-components'
 import { useCMParamsContext } from '@app/contexts/cm-params/cm-params.context.tsx'
-import { useThemeContext } from '@app/contexts/theme-context.ts'
+import { useThemeContext } from '@app/contexts/theme/theme-context.ts'
 import { useAreas } from '@entities/categories/hooks/use-areas.ts'
 import { useTypes } from '@entities/categories/hooks/use-types.ts'
 import { today } from '@internationalized/date'

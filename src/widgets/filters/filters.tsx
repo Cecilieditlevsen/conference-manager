@@ -1,5 +1,5 @@
 import { useCMParamsContext } from '@app/contexts/cm-params/cm-params.context.tsx'
-import { useThemeContext } from '@app/contexts/theme-context.ts'
+import { useThemeContext } from '@app/contexts/theme/theme-context.ts'
 import { isToday, parseDate } from '@internationalized/date'
 import { IconX } from '@shared/icons/icon-x.tsx'
 import { SideBar } from '@widgets/filters/side-bar/side-bar.tsx'

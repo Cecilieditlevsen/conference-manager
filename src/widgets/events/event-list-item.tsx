@@ -1,3 +1,4 @@
+import { useThemeContext } from '@app/contexts/theme/theme-context.ts'
 import dayjs from 'dayjs'
 import updateLocale from 'dayjs/plugin/updateLocale'
 import utc from 'dayjs/plugin/utc'
@@ -5,7 +6,6 @@ import { tw } from 'twind'
 
 import 'dayjs/locale/da'
 
-import { useThemeContext } from '../../app/contexts/theme-context.ts'
 import { EventDate } from '../molecules/event-date.tsx'
 import { EventInfoItem } from '../molecules/event-info-item.tsx'
 
