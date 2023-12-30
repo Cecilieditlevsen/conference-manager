@@ -49,6 +49,7 @@ export const EventListItem = ({
             </span>
           </div>
         ) : null}
+
         <h3
           className={tw`text-heading-3-lg md:text-heading-3-lg font-heading-weight font-primary`}
         >
