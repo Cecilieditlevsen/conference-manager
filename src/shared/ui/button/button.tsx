@@ -2,8 +2,8 @@ import type { ButtonHTMLAttributes } from 'react'
 import { forwardRef } from 'react'
 import { Slot } from '@radix-ui/react-slot'
 import { cn } from '@shared/lib/cn.tsx'
-import type { ButtonProps } from '@shared/widgets/ui/button/button.styles.ts'
-import { buttonVariantsStyles } from '@shared/widgets/ui/button/button.styles.ts'
+import type { ButtonProps } from '@shared/ui/button/button.styles.ts'
+import { buttonVariantsStyles } from '@shared/ui/button/button.styles.ts'
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> &
   ButtonProps & {

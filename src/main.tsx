@@ -5,6 +5,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 import App from './app.tsx'
 
+import './app.css'
 import './global.css'
 
 export const queryClient = new QueryClient()

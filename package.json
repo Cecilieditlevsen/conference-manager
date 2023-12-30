@@ -12,7 +12,9 @@
     "preview": "vite preview",
     "format": "prettier --write .",
     "type-check": "tsc --noEmit",
-    "validate": "pnpm lint && pnpm type-check"
+    "validate": "pnpm lint && pnpm type-check",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@chakra-ui/spinner": "^2.1.0",
@@ -40,6 +42,15 @@
     "zod-validation-error": "^2.1.0"
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "^7.6.6",
+    "@storybook/addon-essentials": "^7.6.6",
+    "@storybook/addon-interactions": "^7.6.6",
+    "@storybook/addon-links": "^7.6.6",
+    "@storybook/addon-onboarding": "^1.0.10",
+    "@storybook/blocks": "^7.6.6",
+    "@storybook/react": "^7.6.6",
+    "@storybook/react-vite": "^7.6.6",
+    "@storybook/test": "^7.6.6",
     "@types/ms": "^0.7.34",
     "@types/node": "^20.10.6",
     "@types/react": "^18.2.46",
@@ -54,8 +65,10 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-storybook": "^0.6.15",
     "eslint-plugin-unicorn": "^50.0.1",
     "prettier": "^3.1.1",
+    "storybook": "^7.6.6",
     "typescript": "^5.3.3",
     "vite": "^5.0.10",
     "vite-tsconfig-paths": "^4.2.3"
