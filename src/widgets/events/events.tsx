@@ -89,6 +89,7 @@ export const Events = () => {
                           )}
                         >
                           <EventCard
+                            isDarkTheme={isDarkTheme}
                             startDate={event.eventStartTS}
                             title={event.eventName}
                             category={

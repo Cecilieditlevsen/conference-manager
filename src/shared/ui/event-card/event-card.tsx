@@ -1,5 +1,4 @@
 import React from 'react'
-import { useThemeContext } from '@app/contexts/theme/theme-context.ts'
 import { EventCategory } from '@shared/ui/event-card/event-card-category.tsx'
 import { EventDate } from '@shared/ui/event-card/event-card-date.tsx'
 import { EventCardDetail } from '@shared/ui/event-card/event-card-detail.tsx'
@@ -11,26 +10,19 @@ type EventCardProps = {
   category?: string
   title: string
   details?: React.ReactNode
+  isDarkTheme: boolean
 }
 
 export function EventCard(props: EventCardProps) {
-  const theme = useThemeContext()
-
-  const isDarkTheme = theme === 'dark-theme'
-
   return (
     <div
       className={tw`w-full flex py-[30px] gap-4 border-t border-t-solid border-gray-500`}
     >
-      <EventDate
-        startDate={props.startDate}
-        endDate={props.endDate}
-        isDarkTheme={isDarkTheme}
-      />
+      <EventDate startDate={props.startDate} isDarkTheme={props.isDarkTheme} />
 
       <div className={tw`ml-4`}>
         {props.category ? (
-          <EventCategory isDarkTheme={isDarkTheme}>
+          <EventCategory isDarkTheme={props.isDarkTheme}>
             {props.category}
           </EventCategory>
         ) : null}

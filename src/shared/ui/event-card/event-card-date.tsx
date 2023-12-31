@@ -5,11 +5,10 @@ import { tw } from 'twind'
 
 type DateProps = {
   startDate: string
-  endDate?: string
   isDarkTheme: boolean
 }
 
-export function EventDate({ startDate, endDate, isDarkTheme }: DateProps) {
+export function EventDate({ startDate, isDarkTheme }: DateProps) {
   return (
     <div
       className={tw(
@@ -22,10 +21,6 @@ export function EventDate({ startDate, endDate, isDarkTheme }: DateProps) {
         ),
       )}
     >
-      {/*{eventDays > 0 ? (*/}
-      {/*  <span className={tw`font-secondary text-component-body mb-1`}>Fra</span>*/}
-      {/*) : null}*/}
-
       <span className={tw`font-secondary text-2xl`}>
         {dayjs(startDate).format('DD')}
       </span>

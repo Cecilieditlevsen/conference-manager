@@ -15,6 +15,7 @@ const meta = {
     startDate: new Date().toISOString(),
     endDate: new Date().toISOString(),
     title: 'Kommunalt Nøgletalssamarbejde på ejendomsområdet Tilmelding',
+    isDarkTheme: false,
   },
   render: (args) => (
     <ThemeContextProvider>
