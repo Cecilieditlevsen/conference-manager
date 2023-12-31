@@ -1,12 +1,13 @@
 import React from 'react'
 import { useThemeContext } from '@app/contexts/theme/theme-context.ts'
+import { EventCategory } from '@shared/ui/event-card/event-card-category.tsx'
 import { EventDate } from '@shared/ui/event-card/event-card-date.tsx'
 import { EventCardDetail } from '@shared/ui/event-card/event-card-detail.tsx'
 import { tw } from 'twind'
 
 type EventCardProps = {
-  date: string
-  eventDays: number
+  startDate: string
+  endDate?: string
   category?: string
   title: string
   details?: React.ReactNode
@@ -18,24 +19,20 @@ export function EventCard(props: EventCardProps) {
   const isDarkTheme = theme === 'dark-theme'
 
   return (
-    <div className={tw`w-full flex py-[30px] gap-4`}>
+    <div
+      className={tw`w-full flex py-[30px] gap-4 border-t border-t-solid border-gray-500`}
+    >
       <EventDate
-        startDate={props.date}
-        eventDays={props.eventDays}
+        startDate={props.startDate}
+        endDate={props.endDate}
         isDarkTheme={isDarkTheme}
       />
 
-      <div>
+      <div className={tw`ml-4`}>
         {props.category ? (
-          <div className={tw`flex mb-[10px] space-x-[10px]`}>
-            <span
-              className={tw`${
-                isDarkTheme ? 'text-dark-highlight-2' : 'text-tag'
-              } font-primary text-sm font-semibold`}
-            >
-              {props.category}
-            </span>
-          </div>
+          <EventCategory isDarkTheme={isDarkTheme}>
+            {props.category}
+          </EventCategory>
         ) : null}
 
         <h3
@@ -44,7 +41,7 @@ export function EventCard(props: EventCardProps) {
           {props.title}
         </h3>
 
-        {props.details}
+        <div className={tw`mt-3`}>{props.details}</div>
       </div>
     </div>
   )

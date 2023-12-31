@@ -4,13 +4,19 @@ import { useCMParamsContext } from '@app/contexts/cm-params/cm-params.context.ts
 import { useThemeContext } from '@app/contexts/theme/theme-context.ts'
 import { Spinner } from '@chakra-ui/spinner'
 import { useInfiniteEvents } from '@entities/events/hooks/use-infinite-events.ts'
-import { EventListItem } from '@widgets/events/event-list-item.tsx'
+import { IconAlert } from '@shared/icons/icon-alert.tsx'
+import { IconCalendar } from '@shared/icons/icon-calendar.tsx'
+import { IconCalendarDue } from '@shared/icons/icon-calendar-due.tsx'
+import { IconTime } from '@shared/icons/icon-time.tsx'
+import { EventCard } from '@shared/ui/event-card/event-card.tsx'
 import { clsx } from 'clsx'
+import dayjs from 'dayjs'
 import { tw } from 'twind'
 
 export const Events = () => {
   const { date, type, area, searchQuery } = useCMParamsContext()
   const theme = useThemeContext()
+  const isDarkTheme = theme === 'dark-theme'
 
   const {
     isSuccess,
@@ -30,10 +36,10 @@ export const Events = () => {
 
   return (
     <div className={tw`w-full`}>
-      {isError && <p className={tw`text-red-500`}>Der skate en fejl</p>}
+      {isError && <p className={tw`text-red-500`}>Der skete en fejl</p>}
 
       {isSuccess && (
-        <div className={tw`w-full `}>
+        <div className={tw`w-full`}>
           <div className={tw`mb-section-medium md:mb-section-medium-md`}>
             {data.pages.length === 0 && (
               <p
@@ -67,7 +73,7 @@ export const Events = () => {
                       <li
                         key={event.eventID.toString()}
                         className={tw(
-                          clsx('border-t border-t-solid', {
+                          clsx({
                             'border-dark-800': theme === 'dark-theme',
                             'border-grey-medium': theme !== 'dark-theme',
                           }),
@@ -82,17 +88,78 @@ export const Events = () => {
                             }),
                           )}
                         >
-                          <EventListItem
-                            title={event.eventName}
+                          <EventCard
                             startDate={event.eventStartTS}
-                            endDate={event.eventEndTS}
-                            deadline={event.registrationDeadlineTS}
-                            fewAvailableSpots={
-                              event.capacityTotal - event.capacityUsed < 5
+                            title={event.eventName}
+                            category={
+                              event.companyCustomFields.type?.value ?? undefined
                             }
-                            type={event.companyCustomFields.type?.value}
-                            isFullyBooked={
-                              event.capacityTotal === event.capacityUsed
+                            details={
+                              <div className={tw`flex flex-col gap-3`}>
+                                <EventCard.Detail
+                                  variant={'default'}
+                                  isDarkTheme={isDarkTheme}
+                                  icon={<IconCalendarDue />}
+                                >
+                                  Tildmedlingsfrist:{' '}
+                                  {dayjs(event.registrationDeadlineTS)
+                                    .utc()
+                                    .format('DD. MMM YYYY')}
+                                </EventCard.Detail>
+
+                                <EventCard.Detail
+                                  variant={'default'}
+                                  isDarkTheme={isDarkTheme}
+                                  icon={<IconTime />}
+                                >
+                                  {dayjs(event.eventStartTS)
+                                    .utc()
+                                    .format('HH:mm')}
+                                  -
+                                  {dayjs(event.eventEndTS)
+                                    .utc()
+                                    .format('HH:mm')}
+                                </EventCard.Detail>
+
+                                {dayjs(event.eventStartTS).date() !==
+                                  dayjs(event.eventEndTS).date() && (
+                                  <EventCard.Detail
+                                    variant={'default'}
+                                    isDarkTheme={isDarkTheme}
+                                    icon={<IconCalendar />}
+                                  >
+                                    {dayjs(event.eventStartTS)
+                                      .utc()
+                                      .format('DD. MMM YYYY')}{' '}
+                                    -{' '}
+                                    {dayjs(event.eventEndTS)
+                                      .utc()
+                                      .format('DD. MMM YYYY')}
+                                  </EventCard.Detail>
+                                )}
+
+                                {event.capacityUsed === event.capacityTotal && (
+                                  <EventCard.Detail
+                                    variant={'danger'}
+                                    isDarkTheme={isDarkTheme}
+                                    icon={<IconAlert />}
+                                  >
+                                    Arrangementet er fuldt booket
+                                  </EventCard.Detail>
+                                )}
+
+                                {event.capacityTotal - event.capacityUsed < 5 &&
+                                  event.capacityTotal - event.capacityUsed >
+                                    0 && (
+                                    <EventCard.Detail
+                                      variant={'danger'}
+                                      isDarkTheme={isDarkTheme}
+                                      icon={<IconAlert />}
+                                    >
+                                      Få ledige pladser
+                                    </EventCard.Detail>
+                                  )}
+                              </div>
                             }
                           />
                         </a>
