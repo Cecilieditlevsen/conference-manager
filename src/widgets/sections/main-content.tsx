@@ -1,4 +1,5 @@
 import { Suspense } from 'react'
+import { ErrorBoundary } from 'react-error-boundary'
 import { container } from '@shared/styles/container.style.ts'
 import { Events } from '@widgets/events/events.tsx'
 import { Filters } from '@widgets/filters/filters.tsx'
@@ -11,9 +12,11 @@ export const MainContent = () => {
         <Filters />
 
         <div className={tw`col-span-12 md:col-span-9 flex justify-center`}>
-          <Suspense fallback={<span>Indlæser...</span>}>
-            <Events />
-          </Suspense>
+          <ErrorBoundary fallback={<div>Der er sket en fejl</div>}>
+            <Suspense fallback={<span>Indlæser...</span>}>
+              <Events />
+            </Suspense>
+          </ErrorBoundary>
         </div>
       </div>
     </div>

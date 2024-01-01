@@ -1,5 +1,6 @@
 import { Suspense } from 'react'
 import { Button } from 'react-aria-components'
+import { ErrorBoundary } from 'react-error-boundary'
 import { useThemeContext } from '@app/contexts/theme/theme-context.ts'
 import { Spinner } from '@chakra-ui/spinner'
 import { changeTheme } from '@features/change-theme.ts'
@@ -32,24 +33,26 @@ export const CMComponent = () => {
 
       <SearchBar />
 
-      <Suspense
-        fallback={
-          <div
-            className={tw`w-full py-[200px] flex justify-center items-center`}
-          >
-            <Spinner
-              className={tw(
-                clsx('w-6 h-6', {
-                  'text-white': theme === 'dark-theme',
-                  'text-black': theme !== 'dark-theme',
-                }),
-              )}
-            />
-          </div>
-        }
-      >
-        <MainContent />
-      </Suspense>
+      <ErrorBoundary fallback={<div>Der skete en fejl</div>}>
+        <Suspense
+          fallback={
+            <div
+              className={tw`w-full py-[200px] flex justify-center items-center`}
+            >
+              <Spinner
+                className={tw(
+                  clsx('w-6 h-6', {
+                    'text-white': theme === 'dark-theme',
+                    'text-black': theme !== 'dark-theme',
+                  }),
+                )}
+              />
+            </div>
+          }
+        >
+          <MainContent />
+        </Suspense>
+      </ErrorBoundary>
     </main>
   )
 }
