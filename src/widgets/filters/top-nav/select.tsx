@@ -3,7 +3,7 @@ import { useRef, useState } from 'react'
 import { Button, Popover, Select, SelectValue } from 'react-aria-components'
 import { useThemeContext } from '@app/contexts/theme/theme-context.ts'
 import { IconChevronDown } from '@shared/icons/icon-chevron-down.tsx'
-import { fadeIn } from '@shared/styles/animatiosn.style.ts'
+import { fadeIn } from '@shared/styles/animation.style.ts'
 import { clsx } from 'clsx'
 import { tw } from 'twind'
 

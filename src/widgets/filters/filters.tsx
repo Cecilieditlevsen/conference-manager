@@ -1,3 +1,4 @@
+import { Button } from 'react-aria-components'
 import { useCMParamsContext } from '@app/contexts/cm-params/cm-params.context.tsx'
 import { useThemeContext } from '@app/contexts/theme/theme-context.ts'
 import { isToday, parseDate } from '@internationalized/date'
@@ -18,15 +19,15 @@ export const Filters = () => {
       {(date && !isToday(parseDate(date), 'Europe/copenhagen')) ||
       type ||
       area ? (
-        <button
+        <Button
           className={tw`flex items-center md:hidden ${
             theme === 'dark-theme' ? 'text-[#FF9592]' : 'text-red-500'
           }`}
-          onClick={() => clear()}
+          onPress={() => clear()}
         >
           <IconX className={tw`w-4`} />
           Nulstil filtrer
-        </button>
+        </Button>
       ) : null}
     </div>
   )

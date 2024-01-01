@@ -1,4 +1,4 @@
-import { ListBox, ListBoxItem } from 'react-aria-components'
+import { Button, ListBox, ListBoxItem } from 'react-aria-components'
 import { useCMParamsContext } from '@app/contexts/cm-params/cm-params.context.tsx'
 import { useThemeContext } from '@app/contexts/theme/theme-context.ts'
 import { useAreas } from '@entities/categories/hooks/use-areas.ts'
@@ -17,18 +17,6 @@ export const TopNav = () => {
 
   return (
     <div className={tw`flex gap-[20px] flex-wrap md:hidden mb-[40px]`}>
-      <div className={tw`flex w-full relative`}>
-        <button
-          aria-label={'Nulstil Fagområde'}
-          className={tw`ml-[15px] ${
-            theme === 'dark-theme' ? 'text-[#FF9592]' : 'text-red-500'
-          } items-center ${area ? 'flex' : 'hidden'}`}
-          onClick={() => setArea('')}
-        >
-          Nulstil
-        </button>
-      </div>
-
       <div className={tw`w-full flex`}>
         <AriaSelect
           ariaLabel={'Filtrer efter Type'}
@@ -59,15 +47,15 @@ export const TopNav = () => {
           </ListBox>
         </AriaSelect>
 
-        <button
+        <Button
           aria-label={'Nulstil Type'}
           className={tw`ml-[15px] ${
             theme === 'dark-theme' ? 'text-[#FF9592]' : 'text-red-500'
           } items-center ${type ? 'flex' : 'hidden'}`}
-          onClick={() => setType('')}
+          onPress={() => setType('')}
         >
           Nulstil
-        </button>
+        </Button>
       </div>
 
       <div className={tw`flex w-full`}>
@@ -99,21 +87,22 @@ export const TopNav = () => {
             )}
           </ListBox>
         </AriaSelect>
-        <button
+
+        <Button
           aria-label={'Nulstil Fagområde'}
           className={tw`ml-[15px] ${
             theme === 'dark-theme' ? 'text-[#FF9592]' : 'text-red-500'
           } items-center ${area ? 'flex' : 'hidden'}`}
-          onClick={() => setArea('')}
+          onPress={() => setArea('')}
         >
           Nulstil
-        </button>
+        </Button>
       </div>
 
       <div className={tw`flex w-full `}>
         <DatePickerView date={date} setDate={setDate} />
 
-        <button
+        <Button
           className={tw`ml-[15px] ${
             theme === 'dark-theme' ? 'text-[#FF9592]' : 'text-red-500'
           } items-center ${
@@ -121,10 +110,10 @@ export const TopNav = () => {
               ? 'flex'
               : 'hidden'
           }`}
-          onClick={() => setDate('')}
+          onPress={() => setDate('')}
         >
           Nustil
-        </button>
+        </Button>
       </div>
     </div>
   )

@@ -17,7 +17,7 @@ import { isToday, parseDate, today } from '@internationalized/date'
 import { IconChevronDown } from '@shared/icons/icon-chevron-down.tsx'
 import { IconChevronLeft } from '@shared/icons/icon-chevron-left.tsx'
 import { IconChevronRight } from '@shared/icons/icon-chevron-right.tsx'
-import { fadeIn } from '@shared/styles/animatiosn.style.ts'
+import { fadeIn } from '@shared/styles/animation.style.ts'
 import { clsx } from 'clsx'
 import { tw } from 'twind'
 
